@@ -1,0 +1,31 @@
+@startuml
+skinparam class {
+ BackgroundColor #lightblue
+    ArrowColor #darkblue
+
+}
+
+class QrCoder {
+    textArea
+    qrImg
+	makeQr()
+}
+class QrCustom {
+    qrCustom
+    sideColor
+    codeColor
+	makeCustom(qrImg,sideColor,codeColor)
+}
+
+class Render {
+    frame
+	render(frame)
+}
+
+QrCoder <- QrCustom :inherit
+QrCoder --> Render
+
+
+
+
+@enduml
